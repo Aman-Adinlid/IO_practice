@@ -1,9 +1,6 @@
 package se.lexicon.file;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,5 +37,18 @@ public class IODemo {
             e.printStackTrace();
         }
         return strings;
+    }
+//ex3
+    public static List<String> writeStrings(File destination, List<String> src) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(destination))) {
+            for (String toWrite : src) {
+                writer.write(toWrite);
+                writer.newLine();
+            }
+            writer.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return src;
     }
 }
