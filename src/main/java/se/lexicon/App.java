@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import se.lexicon.file.IODemo;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,10 +26,11 @@ public class App {
         stringList.add("Glass");
         stringList.add("Soffa");
         File ex3 = new File("ex3.txt");
-        writeStrings(ex3,stringList);
+        writeStrings(ex3, stringList);
 
-
+        File source = new File("TextName");
+        File destination = new File("exercise4_destination.txt");
+        IODemo.copyFile(source, destination);
 
     }
-
 }

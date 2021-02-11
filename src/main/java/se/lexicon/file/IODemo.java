@@ -38,7 +38,8 @@ public class IODemo {
         }
         return strings;
     }
-//ex3
+
+    //ex3
     public static List<String> writeStrings(File destination, List<String> src) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(destination))) {
             for (String toWrite : src) {
@@ -50,5 +51,21 @@ public class IODemo {
             e.printStackTrace();
         }
         return src;
+    }
+//ex4
+    public static void copyFile(File source, File destination) {
+        try (
+                BufferedInputStream in = new BufferedInputStream(new FileInputStream(source));
+                BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(destination))
+        ) {
+            byte[] buffer = new byte[1042];
+            int bytesRead;
+            while ((bytesRead = in.read(buffer)) > 0) {
+                out.write(buffer, 0, bytesRead);
+                out.flush();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
