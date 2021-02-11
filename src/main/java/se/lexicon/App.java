@@ -5,6 +5,7 @@ import se.lexicon.model.Car;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -34,6 +35,7 @@ public class App {
         File ex3 = new File("ex3.txt");
         writeStrings(ex3, stringList);
 
+        System.out.println("------------------------------");
         File source = new File("TextName");
         File destination = new File("exercise4_destination.txt");
         if (!source.exists()) {
@@ -45,13 +47,19 @@ public class App {
         }
         IODemo.copyFile(source, destination);
 
-
+        System.out.println("------------------------------");
         List<Car> cars = new ArrayList<>();
         Car Audi = new Car("Abs12", "Audi", "x012");
         Car Volvo = new Car("SCF34", "Audi", "wvv1");
         cars.add(Audi);
         cars.add(Volvo);
-        File myCarFile = new File("ex5.txt");
+        saveList(cars, "Cars.ser");
+        System.out.println("---------------------------------------");
+        List<Car> result = readFile(cars,"E:\\myproject\\assignments\\IO_practice\\Cars.ser");
+        System.out.println("result = " + result);
+
+
+
 
 
     }

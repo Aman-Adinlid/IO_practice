@@ -73,15 +73,31 @@ public class IODemo {
     }
 
     //ex5
-    public List<Car> serialize(List<Car> source, String filePath) {
 
-        try (
-                ObjectInputStream in = new ObjectInputStream(new FileInputStream(filePath));
-        ) {
-            in.readObject();
-        } catch (IOException | ClassNotFoundException e) {
+    public static List<Car> saveList (List<Car> source, String filePath){
+        try(
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(filePath))
+        ){
+            objectOutputStream.writeObject(source);
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return source;
     }
+
+    public static List<Car> readFile(List<Car> source , String filePath) {
+        try (
+                ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(filePath))
+        ) {
+            objectInputStream.readObject();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return source;
+    }
+
 }
