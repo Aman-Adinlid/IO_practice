@@ -74,10 +74,10 @@ public class IODemo {
 
     //ex5
 
-    public static List<Car> saveList (List<Car> source, String filePath){
-        try(
+    public static List<Car> saveList(List<Car> source, String filePath) {
+        try (
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(filePath))
-        ){
+        ) {
             objectOutputStream.writeObject(source);
         } catch (IOException e) {
             e.printStackTrace();
@@ -85,7 +85,7 @@ public class IODemo {
         return source;
     }
 
-    public static List<Car> readFile(List<Car> source , String filePath) {
+    public static List<Car> readFile(List<Car> source, String filePath) {
         try (
                 ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(filePath))
         ) {

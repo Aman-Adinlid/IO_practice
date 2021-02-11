@@ -54,12 +54,10 @@ public class App {
         cars.add(Audi);
         cars.add(Volvo);
         saveList(cars, "Cars.ser");
+
         System.out.println("---------------------------------------");
-        List<Car> result = readFile(cars,"E:\\myproject\\assignments\\IO_practice\\Cars.ser");
+        List<Car> result = readFile(cars, "E:\\myproject\\assignments\\IO_practice\\Cars.ser");
         System.out.println("result = " + result);
-
-
-
 
 
     }
