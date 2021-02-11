@@ -28,17 +28,17 @@ public class IODemo {
     }
 
     //ex2
-    public static List<String> ReaderNames(File source) {
-        List<String> strings = new ArrayList<>();
+    public static List<String> readerNames(File source) {
+        List<String> names = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(source))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                strings.add(line);
+                names.add(line);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return strings;
+        return names;
     }
 
     //ex3

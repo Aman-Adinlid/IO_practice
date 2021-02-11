@@ -4,6 +4,7 @@ import se.lexicon.file.IODemo;
 import se.lexicon.model.Car;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -16,11 +17,14 @@ public class App {
         File file = new File("E:\\myproject\\assignments\\IO_practice\\txt");
         String fileContent = read(file);
         System.out.println(fileContent);
+        System.out.println("------------------------------");
 
-        File names = new File("E:\\myproject\\assignments\\IO_practice\\txt");
-        for (String string : ReaderNames(names)) {
+        File names = new File("E:\\myproject\\assignments\\IO_practice\\TextName");
+        for (String string : readerNames(names)) {
             System.out.println(string);
         }
+
+        System.out.println("------------------------------");
         List<String> stringList = new ArrayList<>();
         stringList.add("Water");
         stringList.add("Book");
@@ -32,6 +36,13 @@ public class App {
 
         File source = new File("TextName");
         File destination = new File("exercise4_destination.txt");
+        if (!source.exists()) {
+            try {
+                source.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         IODemo.copyFile(source, destination);
 
 
