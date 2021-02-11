@@ -1,11 +1,13 @@
 package se.lexicon.file;
 
+import se.lexicon.model.Car;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class IODemo {
-
+//ex1
 
     public static String read(File source) {
         StringBuilder readText = new StringBuilder();
@@ -25,7 +27,7 @@ public class IODemo {
         return readText.toString();
     }
 
-
+    //ex2
     public static List<String> ReaderNames(File source) {
         List<String> strings = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(source))) {
@@ -52,7 +54,8 @@ public class IODemo {
         }
         return src;
     }
-//ex4
+
+    //ex4
     public static void copyFile(File source, File destination) {
         try (
                 BufferedInputStream in = new BufferedInputStream(new FileInputStream(source));
@@ -67,5 +70,18 @@ public class IODemo {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    //ex5
+    public List<Car> serialize(List<Car> source, String filePath) {
+
+        try (
+                ObjectInputStream in = new ObjectInputStream(new FileInputStream(filePath));
+        ) {
+            in.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return source;
     }
 }

@@ -1,10 +1,12 @@
 package se.lexicon;
 
 import se.lexicon.file.IODemo;
+import se.lexicon.model.Car;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
 
 import static se.lexicon.file.IODemo.*;
 
@@ -32,5 +34,15 @@ public class App {
         File destination = new File("exercise4_destination.txt");
         IODemo.copyFile(source, destination);
 
+
+        List<Car> cars = new ArrayList<>();
+        Car Audi = new Car("Abs12", "Audi", "x012");
+        Car Volvo = new Car("SCF34", "Audi", "wvv1");
+        cars.add(Audi);
+        cars.add(Volvo);
+        File myCarFile = new File("ex5.txt");
+
+
     }
+
 }
