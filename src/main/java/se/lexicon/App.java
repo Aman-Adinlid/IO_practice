@@ -23,7 +23,7 @@ public class App {
         stringList.add("Table");
         stringList.add("Glass");
         stringList.add("Soffa");
-        File ex3 = new File("Ex3.txt");
+        File ex3 = new File("Exercise3.txt");
         writeStrings(ex3,stringList);
 
 
