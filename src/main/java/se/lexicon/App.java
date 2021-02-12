@@ -56,7 +56,7 @@ public class App {
         saveList(cars, "Cars.ser");
 
         System.out.println("---------------------------------------");
-        List<Car> result = readFile("E:\\myproject\\assignments\\IO_practice\\Cars.ser");
+        List<Car> result = readFile("Cars.ser");
         for (Car string : result) {
             System.out.println(string.toString());
 
