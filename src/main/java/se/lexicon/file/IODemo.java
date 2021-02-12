@@ -74,7 +74,7 @@ public class IODemo {
 
     //ex5
 
-    public static List<Car> saveList(List<Car> source, String filePath) {
+    public static void saveList(List<Car> source, String filePath) {
         try (
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(filePath))
         ) {
@@ -82,14 +82,16 @@ public class IODemo {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return source;
+
     }
 
-    public static List<Car> readFile(List<Car> source, String filePath) {
+    public static List<Car> readFile(String filePath) {
         try (
                 ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(filePath))
         ) {
-            objectInputStream.readObject();
+            List<Car> returnObject = (List<Car>) objectInputStream.readObject();
+            return returnObject;
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -97,7 +99,7 @@ public class IODemo {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return source;
+        return null;
     }
 
 }
