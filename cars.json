@@ -1,0 +1,21 @@
+[ {
+  "carId" : "2b2f50c6-7df1-4efb-ab68-e15b6077651c",
+  "regNum" : "Abs12",
+  "brand" : "Audi",
+  "model" : "x012"
+}, {
+  "carId" : "4b01f014-d7d9-4769-9be6-1f11f4180b6b",
+  "regNum" : "SCF34",
+  "brand" : "Audi",
+  "model" : "wvv1"
+}, {
+  "carId" : "ce735b86-723a-4a91-ab38-255dcc611f65",
+  "regNum" : "wws1",
+  "brand" : "Mercedes",
+  "model" : "aw3"
+}, {
+  "carId" : "ff49db40-b168-412f-87d7-9fd5550448c2",
+  "regNum" : "123ar",
+  "brand" : "Volvo",
+  "model" : "xxz"
+} ]
