@@ -15,16 +15,18 @@ import static se.lexicon.file.IODemo.*;
 
 public class App {
     public static void main(String[] args) {
-        File file = new File("E:\\myproject\\assignments\\IO_practice\\txt");
+        //ex1
+        File file = new File("txt");
         String fileContent = read(file);
         System.out.println(fileContent);
         System.out.println("------------------------------");
-
-        File names = new File("E:\\myproject\\assignments\\IO_practice\\TextName");
+//ex2
+        System.out.println("------------------------------");
+        File names = new File("TextName");
         for (String string : readerNames(names)) {
             System.out.println(string);
         }
-
+//ex3
         System.out.println("------------------------------");
         List<String> stringList = new ArrayList<>();
         stringList.add("Water");
@@ -34,7 +36,7 @@ public class App {
         stringList.add("Soffa");
         File ex3 = new File("ex3.txt");
         writeStrings(ex3, stringList);
-
+//ex4
         System.out.println("------------------------------");
         File source = new File("TextName");
         File destination = new File("exercise4_destination.txt");
@@ -46,7 +48,7 @@ public class App {
             }
         }
         IODemo.copyFile(source, destination);
-
+//ex5
         System.out.println("------------------------------");
         List<Car> cars = new ArrayList<>();
         Car Audi = new Car("Abs12", "Audi", "x012");
